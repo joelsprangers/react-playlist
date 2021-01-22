@@ -1,0 +1,72 @@
+.playlist-input {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  justify-content: space-between;
+  color: black;
+}
+
+.playlist-input-filter {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+}
+
+.input-primary {
+  font-family: monospace;
+  background-color: unset;
+  width: 150px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.button-primary {
+  font-family: monospace;
+  background-color: black;
+  width: 150px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid black;
+  color: white;
+}
+
+.input-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  font-family: monospace;
+  font-size: 10px;
+  background-color: unset;
+  width: 150px;
+  height: 75px;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+
+.input-filter-flex {
+  font-family: monospace;
+  background-color: unset;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.song-header {
+  font-family: monospace;
+}

@@ -30,7 +30,7 @@ class SongForm extends Component {
 
   render() {
     return (
-      <form className="playlist-input" onSubmit={this.onSubmit}>
+      <form className="grid-input playlist-input" onSubmit={this.onSubmit}>
         <input
           placeholder="title"
           name="title"
@@ -67,7 +67,7 @@ class SongForm extends Component {
           name="rating"
           onChange={this.onInput}
         >
-          <option value="">choose a rating</option>
+          <option value="">rating</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>

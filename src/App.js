@@ -1,4 +1,6 @@
-import "./App.css";
+import "./css/App.css";
+import "./css/style_blank_reset.css";
+
 import SongOverview from "./SongOverview";
 
 function App() {

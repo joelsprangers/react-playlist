@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import SongForm from "./components/SongForm";
 import SongList from "./components/SongList";
 import SongFilter from "./components/SongFilter";
+import NavBar from "./components/NavBar";
+import "./css/SongOverview.css";
 
 class SongOverview extends Component {
   constructor() {
@@ -18,35 +20,37 @@ class SongOverview extends Component {
         },
         {
           id: 101,
-          title: "Therefore I am",
-          artist: "Billie Eilish",
-          genre: "rock",
-          rating: 3,
+          title: "Fountain",
+          artist: "Ionnalee",
+          genre: "pop",
+          rating: 2,
         },
         {
           id: 102,
-          title: "Therefore I am",
-          artist: "Billie Eilish",
+          title: "The Rose",
+          artist: "Lakshmi",
           genre: "indie",
-          rating: 5,
+          rating: 3,
         },
         {
           id: 103,
-          title: "Therefore I am",
-          artist: "Billie Eilish",
-          genre: "pop",
-          rating: 5,
+          title: "bla",
+          artist: "BLACKPINK",
+          genre: "rock",
+          rating: 2,
         },
         {
           id: 104,
           title: "Therefore I am",
           artist: "Billie Eilish",
-          genre: "rock",
-          rating: 1,
+          genre: "indie",
+          rating: 5,
         },
       ],
       byGenre: "default",
       byRating: "default",
+      azArtist: false,
+      azSong: false,
     };
 
     this.deleteSong = this.deleteSong.bind(this);
@@ -75,46 +79,27 @@ class SongOverview extends Component {
   };
 
   onInput = (event) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-    console.log(this.state);
+    const { name, value, type, checked } = event.target;
+    type === "checkbox"
+      ? this.setState({
+          [name]: checked,
+        })
+      : this.setState({ [name]: value });
+    //console.log(this.state);
   };
 
   render() {
-    const filteredByGenre = (songs) => {
-      if (this.state.byGenre !== "default") {
-        let filter = this.state.songs.filter(
-          (song) => song.genre === this.state.byGenre
-        );
-
-        return filter;
-      } else return songs;
-    };
-
-    const filteredByRating = (songs) => {
-      if (this.state.byRating !== "default") {
-        let filter = songs.filter(
-          (song) => song.rating === parseInt(this.state.byRating)
-        );
-
-        return filter;
-      } else return songs;
-    };
-
-    let filteredSongs = (songs) => {
-      let genreFilter = filteredByGenre(songs);
-      let ratingFilter = filteredByRating(genreFilter);
-      return ratingFilter;
-    };
-
     return (
-      <div>
-        <SongForm addSong={this.addSong} onInput={this.onInput} />
-        <SongList
-          songs={filteredSongs(this.state.songs)}
-          deleteSong={this.deleteSong}
+      <div className="App-body app-grid">
+        <img
+          className="background"
+          src="./background_blur.png"
+          alt="background-blur"
         />
-        <SongFilter filter={this.state.filter} onInput={this.onInput} />
+        <NavBar />
+        <SongForm addSong={this.addSong} onInput={this.onInput} />
+        <SongList songsAndFilter={this.state} deleteSong={this.deleteSong} />
+        <SongFilter filter={this.state} onInput={this.onInput} />
       </div>
     );
   }
