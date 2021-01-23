@@ -48,25 +48,30 @@ const SongList = (props) => {
   let filteredSongList = filteredSongs(props.songsAndFilter.songs);
 
   return (
-    <table className="song-header grid-main">
+    <table className="song-table grid-main">
       <SongHeader />
-      <tbody>
+      <tbody className="song-list">
         {filteredSongList.map((song) => {
           return (
-            <tr key={song.id} className="song">
-              <td key="song-item-title" className="song-item-title">
+            <tr key={song.id} className="song-row">
+              <td key="song-item-title" className="song-item">
                 {song.title === "" ? "unknown song" : song.title}
               </td>
-              <td key="song-item-artist" className="song-item-artist">
+              <td key="song-item-artist" className="song-item">
                 {song.artist === "" ? "unknown artist" : song.artist}
               </td>
-              <td key="song-item-genre" className="song-item-genre">
+              <td key="song-item-genre" className="song-item">
                 {song.genre === "" ? "unknown genre" : song.genre}
               </td>
-              <td key="song-item-rating" className="song-item-rating">
+              <td key="song-item-rating" className="song-item">
                 {song.rating === "" ? "not rated" : song.rating}
               </td>
-              <td id={song.id} key={song.id} onClick={props.deleteSong}>
+              <td
+                className="song-item-delete"
+                id={song.id}
+                key={song.id}
+                onClick={props.deleteSong}
+              >
                 {" "}
                 delete{" "}
               </td>

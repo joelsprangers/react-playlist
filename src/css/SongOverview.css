@@ -4,7 +4,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-
   justify-content: space-between;
   color: black;
 }
@@ -67,6 +66,25 @@
   border-bottom: 2px solid black;
 }
 
+.song-table {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: monospace;
+  font-size: calc(8px + 1vmin);
+}
+
 .song-header {
   font-family: monospace;
+  font-size: calc(12px + 1vmin);
+  padding: 10px;
+}
+
+td {
+  padding: 5px;
+}
+
+.song-item-delete {
+  font-size: calc(6px + 1vmin);
+  text-decoration: line-through;
+  text-decoration-color: red;
 }

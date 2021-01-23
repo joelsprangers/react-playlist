@@ -38,7 +38,7 @@ const SongFilter = (props) => {
       <label className="input-filter">
         a-z (artist)
         <input
-          className="input-filter-flex"
+          className="input-filter-flex checkbox"
           type="checkbox"
           name="azArtist"
           checked={props.filter.azArtist}
@@ -48,7 +48,7 @@ const SongFilter = (props) => {
       <label className="input-filter">
         a-z (songs)
         <input
-          className="input-filter-flex"
+          className="input-filter-flex checkbox"
           type="checkbox"
           name="azSong"
           checked={props.filter.azSong}

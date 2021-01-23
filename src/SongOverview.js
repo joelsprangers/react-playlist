@@ -3,6 +3,7 @@ import SongForm from "./components/SongForm";
 import SongList from "./components/SongList";
 import SongFilter from "./components/SongFilter";
 import NavBar from "./components/NavBar";
+import Background from "./components/Background";
 import "./css/SongOverview.css";
 
 class SongOverview extends Component {
@@ -91,12 +92,8 @@ class SongOverview extends Component {
   render() {
     return (
       <div className="App-body app-grid">
-        <img
-          className="background"
-          src="./background_blur.png"
-          alt="background-blur"
-        />
         <NavBar />
+        <Background />
         <SongForm addSong={this.addSong} onInput={this.onInput} />
         <SongList songsAndFilter={this.state} deleteSong={this.deleteSong} />
         <SongFilter filter={this.state} onInput={this.onInput} />
